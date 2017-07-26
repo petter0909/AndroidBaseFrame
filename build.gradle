@@ -6,8 +6,9 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' //增加这一句butterknife
         classpath 'com.jakewharton:butterknife-gradle-plugin:8.7.0'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' //增加这一句butterknife
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
