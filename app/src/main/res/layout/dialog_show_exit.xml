@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="270dp"
+        android:layout_height="150dp"
+        android:background="@drawable/dialog_layout_prompt"
+         >
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/app_tip"
+            android:textColor="@color/base_title_text_color"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_16" />
+
+        <TextView
+            android:id="@+id/Tv_hint1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="是否确定立即退出"
+            android:textColor="@color/base_title_text_color"
+            android:textSize="@dimen/text_14" />
+
+
+
+        <ImageView
+            android:id="@+id/Iv_line"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/Tv_hint1"
+            android:background="@color/base_underline_color" />
+
+
+
+        <RelativeLayout
+            android:id="@+id/Rl_layout1"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/Iv_line2" >
+
+            <TextView
+                android:id="@+id/Tv_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:text="确定"
+                android:textColor="@color/base_title_text_color"
+                android:textSize="17sp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/Iv_line2"
+            android:layout_width="0.5dp"
+            android:layout_height="44dp"
+            android:layout_below="@+id/Iv_line"
+            android:layout_centerHorizontal="true"
+            android:background="@color/base_underline_color" />
+
+        <RelativeLayout
+            android:id="@+id/rl_layout2"
+            android:layout_width="150dp"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/Iv_line2" >
+
+            <TextView
+                android:id="@+id/Tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="#00000000"
+                android:text="取消"
+                android:textColor="@color/base_title_text_color"
+                android:textSize="17sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

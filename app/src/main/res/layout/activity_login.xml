@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.third.party.library.views.MultipleStatusView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/myMultipleStatusView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:loadingView="@layout/loading_view"
+    app:emptyView="@layout/empty_view"
+    app:errorView="@layout/error_view"
+    app:noNetworkView="@layout/no_network_view">
+
+    <LinearLayout
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/component_page_header"/>
+
+
+        <com.third.party.library.views.SearchEditText
+            android:id="@+id/searchedit"
+            android:layout_width="match_parent"
+            style="@style/editTextStyle"
+            android:layout_margin="@dimen/dimen_15"
+            android:layout_height="45dp"
+            android:padding="@dimen/padding_10"/>
+    </LinearLayout>
+
+
+
+
+
+</com.third.party.library.views.MultipleStatusView>

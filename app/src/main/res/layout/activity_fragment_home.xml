@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.third.party.library.views.MultipleStatusView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/myMultipleStatusView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:loadingView="@layout/loading_view"
+    app:emptyView="@layout/empty_view"
+    app:errorView="@layout/error_view"
+    app:noNetworkView="@layout/no_network_view">
+
+    <RelativeLayout
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.third.party.library.views.ZRecycleView.ZRecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_above="@+id/text"
+            android:layout_height="match_parent">
+
+        </com.third.party.library.views.ZRecycleView.ZRecyclerView>
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+
+
+
+</com.third.party.library.views.MultipleStatusView>
