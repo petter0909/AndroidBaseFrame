@@ -1,0 +1,81 @@
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string
+        name="live_quality">当前质量:&#160;<xliff:g id="value">%1$s</xliff:g></string>
+
+    <!--MultipleStatusView-->
+    <string name="empty_view_hint">暂无数据，点击重试</string>
+    <string name="error_view_hint">加载失败，点击重试</string>
+    <string name="no_network_view_hint">网络异常</string>
+    <string name="loging_view_hint">努力加载中...</string>
+
+    <!-- 微信支付sdk -->
+    <string name="image_view_content_des">image</string>
+    <string name="button_text_confirm">确定</string>
+    <string name="app_progress_msg">正在加载 …</string>
+    <string name="app_sign_msg">正在验签</string>
+    <string name="payask_error">请求参数错误</string>
+    <string name="app_tip">提示</string>
+    <string name="app_choose_payment_method">请选择支付方式</string>
+    <string name="confirm_pay">确认支付</string>
+    <string name="charge_migu_money">充值</string>
+    <string name="title_name">支付中心</string>
+    <string name="goods_name">商品名称：</string>
+    <string name="goods_num">商品数量：</string>
+    <string name="pay_num">应付金额：</string>
+    <string name="pay_unit_yuan">元</string>
+    <string name="pay_unit_yuan_symbol">￥</string>
+    <string name="pay_migumoney_num">个咪咕币</string>
+    <string name="pay_migumoney_available">可用:</string>
+    <string name="choose_pay_type">请选择支付方式：</string>
+    <string name="sdk_confrim_exit_message">确认取消支付？</string>
+    <string name="sdk_confrim_exit_confirm">确认</string>
+    <string name="sdk_confrim_exit_cancle">取消</string>
+    <string name="sdk_pay_in_wechat">请在微信里完成支付</string>
+    <string name="sdk_pay_in_wechat_done">已完成</string>
+    <string name="sdk_install_wechat">请安装微信客户端</string>
+    <!-- WXPayEntryActivity -->
+    <string name="pay_result_tip">这个界面用于显示第三方app通过微信支付的结果</string>
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
+
+    <string name="not_network">"网络不给力，请检查网络设置"</string>
+    <string name="get_data_fail">"获取数据失败"</string>
+    <string name="load_data_fail">"加载数据失败"</string>
+    <string name="not_new_data">"已无新数据"</string>
+
+    <string name="time_day">天前</string>
+    <string name="time_hour">小时前</string>
+    <string name="time_minute">分钟前</string>
+    <string name="time_second">刚刚</string>
+
+    <string name="date_day">天</string>
+    <string name="date_hour">小时</string>
+    <string name="date_minute">分</string>
+    <string name="date_second">秒</string>
+
+    <string name="photograph">拍照</string>
+    <string name="Photo_album_choose">从相册选取</string>
+
+    <string name="xrecycleview_load_nomore">没有更多数据</string>
+    <string name="xrecycleview_loading">正在加载</string>
+    <string name="xrecycleview_load_more">查看更多</string>
+    <string name="xlistview_header_hint_normal">下拉刷新...</string>
+    <string name="xlistview_header_hint_ready">释放以更新&#8230;</string>
+    <string name="xlistview_header_hint_loading">正在刷新中&#8230;</string>
+    <string name="xlistview_header_last_time">上次更新：%1$s</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+    <string name="xlistview_footer_hint_success">更新成功</string>
+    <string name="xlistview_footer_hint_fail">更新失败</string>
+    <string name="xlistview_footer_hint_no_more">没有更多信息了</string>
+
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+
+
+</resources>
