@@ -15,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -27,6 +28,7 @@ import com.qiyue.liveeducation.R;
 import com.third.party.library.utils.ActivityManagerTool;
 import com.third.party.library.utils.ClickToHideKeyBoard;
 import com.third.party.library.utils.MyLogger;
+import com.third.party.library.utils.StatusBarUtil;
 import com.third.party.library.utils.SystemBarTintManager;
 import com.third.party.library.views.CircleProgressDialog;
 import com.third.party.library.views.MultipleStatusView;
@@ -225,10 +227,14 @@ public abstract class   BaseActivity extends FragmentActivity {
 
     protected void steepToolBar(Activity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+            View parentView = contentFrameLayout.getChildAt(0);
+            parentView.setFitsSystemWindows(true);
             SystemBarTintManager tintManager = new SystemBarTintManager(activity);
             tintManager.setStatusBarTintEnabled(true);
             //此处可以重新指定状态栏颜色
             tintManager.setStatusBarTintResource(setStatusBarTintResource());
+            StatusBarUtil.StatusBarLightMode(this);
         }
     }
 

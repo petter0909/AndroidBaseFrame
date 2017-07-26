@@ -7,4 +7,10 @@
 
     <color name="base_title_bac">#F2F3F5</color>
     <color name="base_title_text_color">#444445</color>
+    <!--状态栏颜色-->
+    <color name="app_top_bac">#ffffff</color>
+    <!--分割线-->
+    <color name="layout_index_color">#D9D9D9</color>
+    <!--背景颜色-->
+    <color name="page_background_color">#F1F2F6</color>
 </resources>

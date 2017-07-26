@@ -27,7 +27,6 @@ public abstract class BaseObserver<T> implements Observer<BaseModel<T>> {
 
     @Override
     public void onSubscribe(Disposable d) {
-        HttpDialogUtils.showDialog(mContext);
         logger.e("onSubscribe  "+d.toString());
     }
 
@@ -43,14 +42,12 @@ public abstract class BaseObserver<T> implements Observer<BaseModel<T>> {
 
     @Override
     public void onError(Throwable e) {
-        HttpDialogUtils.dismissDialog(mContext);
         logger.e( "error:" + e.getMessage());
         onHanderFail(e);
     }
 
     @Override
     public void onComplete() {
-        HttpDialogUtils.dismissDialog(mContext);
         logger.e(  "onComplete");
     }
 

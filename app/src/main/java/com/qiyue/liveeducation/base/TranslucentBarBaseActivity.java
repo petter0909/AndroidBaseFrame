@@ -23,6 +23,7 @@ import com.qiyue.liveeducation.net.HttpDialogUtils;
 import com.third.party.library.utils.ActivityManagerTool;
 import com.third.party.library.utils.ClickToHideKeyBoard;
 import com.third.party.library.utils.MyLogger;
+import com.third.party.library.utils.StatusBarUtil;
 import com.third.party.library.views.MultipleStatusView;
 import com.third.party.library.views.ToastView;
 
@@ -178,6 +179,8 @@ public abstract class TranslucentBarBaseActivity extends AppCompatActivity {
         View parentView = contentFrameLayout.getChildAt(0);
         if (parentView != null && Build.VERSION.SDK_INT >= 14) {
             parentView.setFitsSystemWindows(true);
+            parentView.setBackgroundResource(R.color.app_top_bac);
+            getPhoneType();
         }
     }
 
@@ -196,6 +199,16 @@ public abstract class TranslucentBarBaseActivity extends AppCompatActivity {
         boolean touchOnEditText = !(new ClickToHideKeyBoard().toListenering(ev, im, v));
         touchOnEditText(touchOnEditText);
         return super.dispatchTouchEvent(ev);
+    }
+
+    /**
+     * 设置状态栏黑色字体图标，
+     * 适配4.4以上版本MIUIV、Flyme和6.0以上版本其他Android
+     *
+     * @return 1:MIUUI 2:Flyme 3:android6.0
+     */
+    protected int getPhoneType() {
+        return StatusBarUtil.StatusBarLightMode(mActivity);
     }
 
     /**

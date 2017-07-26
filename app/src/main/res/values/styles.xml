@@ -1,67 +1,16 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/page_background_color</item>
         <item name="android:navigationBarColor">@color/navigationBarColor</item>
-        <item name="android:windowBackground">@color/base_home_bacground_color</item>
     </style>
 
-    <style name="BaseTheme" parent="AppTheme">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:windowTranslucentStatus">false</item>
-        <item name="android:statusBarColor">@color/black</item>
-    </style>
-
-    <style name="BaseTheme2" parent="AppTheme">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-        <item name="android:windowIsTranslucent">true</item>
-    </style>
-
-    <style name="MainTabButton" parent="NoButtonRadioButton">
-        <item name="android:background">@null</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent
-        </item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textSize">@dimen/text_12</item>
-        <item name="android:paddingTop">2.5dp</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingLeft">0dp</item>
-        <item name="android:drawablePadding">2dp</item>
-        <item name="android:button">@null</item>
-        <!-- 设置图与文字间距 -->
-    </style>
-
-    <style name="TabButton" parent="NoButtonRadioButton">
-
-        <item name="android:background">@null</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textSize">@dimen/text_12</item>
-        <item name="android:paddingTop">@dimen/padding_5</item>
-        <item name="android:paddingBottom">0.5dp</item>
-        <item name="android:drawablePadding">0dp</item>
-        <item name="android:button">@null</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textColor">@drawable/home_page_textcolor_selector</item>
-        <!-- 设置图与文字间距 -->
-    </style>
-
-
-
+    <style name="ColorTranslucentTheme" parent="AppTheme"></style>
 
 </resources>

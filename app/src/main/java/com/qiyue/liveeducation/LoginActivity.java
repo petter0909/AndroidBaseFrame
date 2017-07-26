@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.Button;
 
 import com.qiyue.liveeducation.base.BaseActivity;
 import com.third.party.library.views.SearchEditText;
@@ -21,6 +22,8 @@ public class LoginActivity extends BaseActivity {
 
     @BindView(R.id.searchedit)
     SearchEditText searchedit;
+    @BindView(R.id.btnLogin)
+    Button btnLogin;
 
     @Override
     protected int initPageLayoutID() {
@@ -29,7 +32,7 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected int setStatusBarTintResource() {
-        return 0;
+        return R.color.colorAccent;
     }
 
     @Override
@@ -67,12 +70,12 @@ public class LoginActivity extends BaseActivity {
     }
 
     @OnClick({
-
+        R.id.btnLogin
     })
     void onClick(View view) {
         switch (view.getId()) {
-            case 0:
-
+            case R.id.btnLogin:
+                MainActivity.startActivity(mActivity);
                 break;
         }
     }
