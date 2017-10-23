@@ -59,8 +59,8 @@ dependencies {
     compile 'com.github.zcweng:switch-button:0.0.3@aar'
     compile 'com.zhy:autolayout:+'
 
-    //utils
-    compile 'com.blankj:utilcode:+'
+    //util1.8.1
+    compile 'com.blankj:utilcode:1.8.1'
     compile 'com.yanzhenjie:permission:1.0.8'
 
     compile files('libs/org.apache.http.legacy.jar')
