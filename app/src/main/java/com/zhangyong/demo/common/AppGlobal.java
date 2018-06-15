@@ -15,14 +15,12 @@ public interface AppGlobal {
         //加载数据页数
         int pagesize = 10;
         //端口号
-        String PORT = ":9002";
+        String PORT = "";
         String http = "http://";
-        String https = "https://";
         //测试正式切换地址
-        String serverIP = RELEASE_VERSION?"api.yiqiquxiang.com":"api.yiqiquxiang.com";
+        String serverIP = RELEASE_VERSION?"www.51chawujia.com":"www.51chawujia.com";
         //接口服务器地址
-        String baseurlhttp = http+serverIP+PORT+"/api/";
-        String baseurlhttps = https+serverIP+PORT+"/api/";
+        String baseurlhttp = http+serverIP+PORT+"/dnf/";
     }
 
     interface BaseApis{

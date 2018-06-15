@@ -17,7 +17,7 @@ import com.zhangyong.demo.net.BaseObserver;
 import com.zhangyong.demo.net.RetrofitFactory;
 import com.zhangyong.demo.net.RxSchedulers;
 import com.zhangyong.demo.net.api.UserApi;
-import com.zhangyong.demo.utils.MyRecyclerViewLoadingListener;
+import com.zhangyong.demo.utils.MyRvListener;
 import com.third.party.library.views.ZRecycleView.ZRecyclerView;
 
 import java.util.ArrayList;
@@ -76,7 +76,7 @@ public class HomeFragment extends BaseFragment {
         imageView2.setImageResource(R.mipmap.ic_launcher);
         recycleview.addHeaderView(imageView);
         recycleview.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recycleview.setLoadingListener(new MyRecyclerViewLoadingListener() {
+        recycleview.setLoadingListener(new MyRvListener() {
 
             @Override
             protected void onRefreshSuccess() {
@@ -106,8 +106,8 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void getUserInfo() {
-        UserApi userApi = RetrofitFactory.getApi("userinfo/user/", UserApi.class, true, true);
-        userApi.getUserInfo().compose(RxSchedulers.<BaseModel<UserInfo>>compose())
+        UserApi userApi = RetrofitFactory.getApi("loginuser", UserApi.class, true, true);
+        userApi.getUserInfo("15000855025", "5201314wcx").compose(RxSchedulers.<BaseModel<UserInfo>>compose())
                 .subscribe(new BaseObserver<UserInfo>(mActivity) {
 
                     @Override

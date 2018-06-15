@@ -115,28 +115,28 @@ public class ToastView extends Toast {
         mToast.show();
     }
 
-    public static void show( int resId, String content, int duration) {
-        extentMakeText(Utils.getContext(), resId, content, duration);
+    public static void show(int resId, String content, int duration) {
+        extentMakeText(Utils.getApp(), resId, content, duration);
     }
 
     public static void show(int resId, String content) {
-        extentMakeText(Utils.getContext(), resId, content, 1000);
+        extentMakeText(Utils.getApp(), resId, content, 1000);
     }
 
     public static void show(String content, int duration) {
-        extentMakeText(Utils.getContext(), 0, content, duration);
+        extentMakeText(Utils.getApp(), 0, content, duration);
     }
 
     public static void show(String content) {
-        extentMakeText(Utils.getContext(), 0, content, 1000);
+        extentMakeText(Utils.getApp(), 0, content, 1000);
     }
 
     public static void showBottom(String content) {
-        extentMakeTextBottom(Utils.getContext(), content, 1000);
+        extentMakeTextBottom(Utils.getApp(), content, 1000);
     }
 
     public static void showBottom(String content, int duration) {
-        extentMakeTextBottom(Utils.getContext(), content, duration);
+        extentMakeTextBottom(Utils.getApp(), content, duration);
     }
 
     private static Handler mHandler = new Handler();

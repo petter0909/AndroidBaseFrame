@@ -13,4 +13,9 @@
 
     <style name="ColorTranslucentTheme" parent="AppTheme"></style>
 
+    <style name="MainAppTheme" parent="AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/logo_splash</item>
+    </style>
+
 </resources>

@@ -6,6 +6,8 @@ import com.zhangyong.demo.module.UserInfo;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 /**
  * Created by ZY on 2016/12/5.
@@ -14,11 +16,12 @@ import retrofit2.http.GET;
 public interface UserApi {
 
     /**
-     *  获取用户信息 http://api.yiqiquxiang.com:9002/api/userinfo/user/getUserInfo?userId=8a9852065b0e8db2015b0e92ed2f0000
+     *  获取用户信息 http://www.51chawujia.com/dnf/app/loginuser?bindPhone=15000855025&password=5201314wcx
      */
-    @GET("getUserInfo")
+    @POST("app/loginuser")
     Observable<BaseModel<UserInfo>> getUserInfo(
-            //@Query("userId") String userId
+            @Part("bindPhone") String bindPhone,
+            @Part("password") String password
 
     );
 }

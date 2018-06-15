@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected int setStatusBarTintResource() {
-        return R.color.red;
+        return R.color.white;
     }
 
     @Override
@@ -99,11 +99,12 @@ public class MainActivity extends BaseActivity {
         fragments.add(secondFragment);
         fragments.add(thirdFragment);
         fragments.add(mineFragment);
-        FragmentUtils.addFragments(getSupportFragmentManager(), fragments, R.id.flContent, 0);
+        FragmentUtils.add(getSupportFragmentManager(), fragments, R.id.flContent, 0);
     }
 
     @Override
     protected void initListener() {
+        assert bottom_navigation_bar != null;
         bottom_navigation_bar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
@@ -112,12 +113,13 @@ public class MainActivity extends BaseActivity {
                 }
                 logger.e("bottom_navigation_bar  onTabSelected  position " + position);
                 mCurShowFragmentIndex = position;
-                FragmentUtils.hideAllShowFragment(fragments.get(mCurShowFragmentIndex));
+                FragmentUtils.show(fragments.get(mCurShowFragmentIndex));
             }
 
             @Override
             public void onTabUnselected(int position) {
                 logger.e("bottom_navigation_bar  onTabUnselected  position " + position);
+                FragmentUtils.hide(fragments.get(position));
             }
 
             @Override

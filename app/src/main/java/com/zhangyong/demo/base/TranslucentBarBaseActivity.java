@@ -303,8 +303,6 @@ public abstract class TranslucentBarBaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        // 注意跳转界面时会自动取消请求
-        // NetRequestHelper.getInstance().cancelHttp();
         super.onDestroy();
         ActivityManagerTool.getActivityManager().removeActivity(this);
     }
@@ -373,14 +371,4 @@ public abstract class TranslucentBarBaseActivity extends AppCompatActivity {
         intent.putExtra(key, value);
         startActivity(intent);
     }
-
-    public void toLoginActivity() {
-        //游客登录的时候   点击进入动画   从下住上进入
-        Intent intent = new Intent();
-        intent.setClass(this, LoginActivity.class);
-        intent.putExtra("isVisitorLogin", true);
-        startActivity(intent);
-        this.overridePendingTransition(R.anim.start_activity_anim, 0);
-    }
-
 }

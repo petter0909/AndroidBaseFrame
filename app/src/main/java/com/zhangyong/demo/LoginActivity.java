@@ -75,6 +75,7 @@ public class LoginActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.btnLogin:
                 MainActivity.startActivity(mActivity);
+                onBackPressed();
                 break;
         }
     }

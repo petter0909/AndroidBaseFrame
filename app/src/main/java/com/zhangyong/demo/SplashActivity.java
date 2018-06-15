@@ -37,7 +37,7 @@ public class SplashActivity extends BaseActivity {
                 public void run() {
                     login();
                 }
-            }, 3000);
+            }, 1000);
         } catch (Exception e) {
         }
     }

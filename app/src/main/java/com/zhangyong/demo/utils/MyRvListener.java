@@ -8,7 +8,7 @@ import com.third.party.library.views.ZRecycleView.ZRecyclerViewLoadingListener;
  * Created by ZY on 2017/7/4.
  */
 
-public abstract class MyRecyclerViewLoadingListener implements ZRecyclerViewLoadingListener {
+public abstract class MyRvListener implements ZRecyclerViewLoadingListener {
     @Override
     public void onLoadMore() {
         new Handler().postDelayed(new Runnable() {

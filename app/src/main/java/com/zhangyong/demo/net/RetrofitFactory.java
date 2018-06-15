@@ -31,7 +31,7 @@ public class RetrofitFactory {
 
     protected static MyLogger logger = MyLogger.getLogger("retrofit Factory", RELEASE_VERSION);
     private static final String BASE_URL = baseurlhttp;
-    private static Context mContext = Utils.getContext();
+    private static Context mContext = Utils.getApp();
     private static Boolean isCache ;
     private static Boolean addUnifiedParam ;
 

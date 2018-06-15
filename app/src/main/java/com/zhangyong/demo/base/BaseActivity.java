@@ -361,6 +361,7 @@ public abstract class   BaseActivity extends FragmentActivity {
         // NetRequestHelper.getInstance().cancelHttp();
         super.onDestroy();
         ActivityManagerTool.getActivityManager().removeActivity(this);
+        mHandler.removeCallbacksAndMessages(null);
     }
 
     @Override
@@ -427,16 +428,5 @@ public abstract class   BaseActivity extends FragmentActivity {
         intent.putExtra(key, value);
         startActivity(intent);
     }
-
-    public void toLoginActivity() {
-        //游客登录的时候   点击进入动画   从下住上进入
-        Intent intent = new Intent();
-        intent.setClass(this, LoginActivity.class);
-        intent.putExtra("isVisitorLogin", true);
-        startActivity(intent);
-        this.overridePendingTransition(R.anim.start_activity_anim, 0);
-    }
-
-
 
 }

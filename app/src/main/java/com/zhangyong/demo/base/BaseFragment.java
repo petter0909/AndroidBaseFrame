@@ -26,6 +26,7 @@ import com.third.party.library.views.CircleProgressDialog;
 import com.third.party.library.views.MultipleStatusView;
 
 import java.lang.reflect.Field;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -33,7 +34,7 @@ import static com.zhangyong.demo.common.AppGlobal.RELEASE_VERSION;
 
 @SuppressLint("ValidFragment")
 public abstract class BaseFragment extends Fragment {
-    protected MyLogger logger = MyLogger.getLogger(getClass().getSimpleName(),RELEASE_VERSION);
+    protected MyLogger logger = MyLogger.getLogger(getClass().getSimpleName(), RELEASE_VERSION);
     /**
      * Fragment Content view
      */
@@ -90,6 +91,7 @@ public abstract class BaseFragment extends Fragment {
     public void showContentview() {
         if (multiplestatusview != null) multiplestatusview.showContent();
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -113,7 +115,6 @@ public abstract class BaseFragment extends Fragment {
             mIsVisible = false;
             onInvisible();
         }
-        logger.e("setUserVisibleHint : "+(mIsVisible?"可见":"不可见"));
         super.setUserVisibleHint(isVisibleToUser);
     }
 
@@ -122,7 +123,7 @@ public abstract class BaseFragment extends Fragment {
         mIsHidden = hidden;
         if (hidden) {
             onHidden();
-        }else {
+        } else {
             onDisplay();
         }
     }
@@ -171,7 +172,6 @@ public abstract class BaseFragment extends Fragment {
      * 转圈圈dialog show
      */
     protected void showCircleProgressDialog() {
-        logger.e("mCircleProgressDialog转圈圈dialog show");
         if (mCircleProgressDialog == null) {
             mCircleProgressDialog = new CircleProgressDialog(getActivity());
         }
@@ -189,7 +189,6 @@ public abstract class BaseFragment extends Fragment {
         }
         mCircleProgressDialog = null;
     }
-
 
 
     @Override
@@ -246,6 +245,7 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 此方法用于初始化成员变量及获取Intent传递过来的数据
      * 注意：这个方法中不能调用所有的View，因为View还没有被初始化，要使用View在initView方法中调用
+     *
      * @param arguments
      */
     protected abstract void initIntentData(Bundle arguments);
@@ -253,15 +253,17 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 此方法用于初始化布局中所有的View，如果使用了View注入框架则不需要调用
      */
-    protected void findView(View inflateView, Bundle savedInstanceState){
-        ButterKnife.bind(this,inflateView);
+    protected void findView(View inflateView, Bundle savedInstanceState) {
+        ButterKnife.bind(this, inflateView);
         if (toolbar_title != null) {
             toolbar_title.setText(initPageTitleName());
         }
         if (multiplestatusview != null) {
             multiplestatusview.setOnRetryClickListener(onRetryClickListener);
         }
-    };
+    }
+
+    ;
 
     /**
      * 此方法用于设置View显示数据
@@ -272,6 +274,7 @@ public abstract class BaseFragment extends Fragment {
      * 初始化监听
      */
     protected abstract void initListener();
+
     /**
      * 重新加载数据
      */
@@ -412,8 +415,11 @@ public abstract class BaseFragment extends Fragment {
         mHandler.sendEmptyMessageDelayed(type, time);
     }
 
-    /** 异步消息处理 **/
-    protected Handler mHandler = new Handler() {
+    /**
+     * 异步消息处理
+     **/
+    @SuppressLint("HandlerLeak")
+    final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -432,18 +438,10 @@ public abstract class BaseFragment extends Fragment {
 
     /**
      * 消息处理回调,子类复写
+     *
      * @param msg
      */
     protected void handleMsg(Message msg) {
-    }
-
-    public void toLoginActivity() {
-        //游客登录的时候   点击进入动画   从下住上进入
-        Intent intent = new Intent();
-        intent.setClass(getActivity(), LoginActivity.class);
-        intent.putExtra("isVisitorLogin",true);
-        startActivity(intent);
-        getActivity().overridePendingTransition(R.anim.start_activity_anim, 0);
     }
 
     private final View.OnClickListener onRetryClickListener = new View.OnClickListener() {
